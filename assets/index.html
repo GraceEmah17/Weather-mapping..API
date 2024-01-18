@@ -20,6 +20,22 @@
       <aside class="col-lg-3 pb-3">
         <h2 id="form-heading" class="mt-1 h3 form-label">
           Search for a City:
+           <!-- Input form for city -->
+           <div class="input-group">
+            <input class="form-input weather-search w-100" type="text" id="cityInput" placeholder="London"
+                aria-labelledby="form-heading" aria-controls="today forecast" />
+            <button class="btn btn-primary search-button w-100" onclick="getWeather()">
+                Search
+            </button>
+        </div>
+      </aside>
+      <div class="col-lg-9 pb-3">
+          <!-- Display area for weather results -->
+          <div id="weatherResults" class="card-columns"></div>
+      </div>
+  </div>
+</div>
+
         </h2>
         <form id="search-form" class="form">
           <div class="form-inline form-group">
