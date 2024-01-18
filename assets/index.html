@@ -68,6 +68,31 @@
                 return;
             }
 
+            // Display the weather information
+            const cityName = data.city.name;
+            const forecastList = data.list;
+
+            weatherResults.innerHTML += `<h2>${cityName}</h2>`;
+
+            for (let i = 0; i < forecastList.length; i += 8) {
+                const forecast = forecastList[i];
+                const date = new Date(forecast.dt * 1000);
+                const temperature = forecast.main.temp;
+                const description = forecast.weather[0].description;
+                const card = document.createElement('div');
+                card.className = 'card';
+                weatherResults.innerHTML += `
+                <div class='card'>
+                    <div class='card-body'>
+                    <h5 class="card-title">${date.toDateString()}</h5>
+                    <p class="card-text">Temperature: ${temperature} &#8451;</p>
+                    <p class="card-text">Description: ${description}</p>
+                    </div>
+                 </div>
+                `;
+            }
+        }
+
 
 
 
