@@ -58,6 +58,16 @@
                     console.error("Error fetching weather data:", error);
                 });
         }
+        // Function to display weather information on the page
+        function displayWeather(data) {
+            const weatherResults = document.getElementById("weatherResults");
+            weatherResults.innerHTML = ""; // Clear previous results
+
+            if (data.cod !== "200") {
+                weatherResults.innerHTML = `<p>Error: ${data.message}</p>`;
+                return;
+            }
+
 
 
 
